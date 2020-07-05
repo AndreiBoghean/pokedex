@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="750" Width="500" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" >
 
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="test">
+            <Setter Property="Foreground" Value="Lime"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value="qwe">
+                    <Setter Property="Background" Value="HotPink"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
     <StackPanel>
 
         <Menu Height="25">
@@ -35,7 +47,7 @@
             <MenuItem x:Name="Close" Header="close"       Background="Red"    Margin="0, 0, 0, 0" Width="40" Height="25" Click="Close_Click"/>
         </Menu>
 
-        <Frame x:Name="TestFrame" Height="725"/>
+        <Frame x:Name="MainContentFrame" MinHeight="725"/>
 
 
     </StackPanel>

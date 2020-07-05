@@ -27,7 +27,7 @@ namespace pokedex
     {
         HttpClient client = new HttpClient();
         public MainWindow()
-        { InitializeComponent(); TestFrame.Content = new PokemonPage(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; }
+        { InitializeComponent(); MainContentFrame.Content = new PokemonPage(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; }
 
         #region close / minimise
         private void Close_Click(object sender, RoutedEventArgs e) => Close();
