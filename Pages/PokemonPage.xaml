@@ -1,0 +1,47 @@
+﻿<Page x:Class="pokedex.Pages.PokemonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      Title="PokemonPage" Width="500" Height="725">
+
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+
+        <!--pokemon images-->
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="0" Grid.Row="0" Width="250" Height="250" Margin="-65,-65,0,0"/>
+            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="1" Grid.Row="0" Width="250" Height="250" Margin="-65,-65,0,0"/>
+            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="250" Height="250" Margin="-65,-65,0,0"/>
+            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Width="250" Height="250" Margin="-65,-65,0,0"/>
+
+        </Grid>
+        <CheckBox FontSize="25" Content="Show Shiny Variant?" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        
+        
+        
+        
+    </Grid>
+</Page>

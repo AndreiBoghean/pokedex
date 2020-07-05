@@ -1,0 +1,43 @@
+﻿<Window xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="pokedex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pokedex"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="500" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" >
+
+    <StackPanel>
+
+        <Menu Height="25">
+
+            <MenuItem x:Name="New" Header="New" Background="Green" Width="40" Height="25">
+
+                <MenuItem x:Name="test" >
+
+                    <MenuItem.Header>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="Pokemon_Name" Text="Pokemon Name" Foreground="Gray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Width="90" />
+                            <Button Content="go" Width="25" Margin="10, 0, 0, 0" Click="PokemonName_Go_Button_Click"/>
+                        </StackPanel>
+
+                    </MenuItem.Header>
+
+                    <MenuItem.Icon>
+                        <Image Source="Assets\Shiny.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem>
+
+            <MenuItem x:Name="Minimise" Header="minimise" Background="Orange" Margin="360, 0, 0, 0" Width="60" Height="25" Click="Minimise_Click"/>
+            <MenuItem x:Name="Close" Header="close"       Background="Red"    Margin="0, 0, 0, 0" Width="40" Height="25" Click="Close_Click"/>
+        </Menu>
+
+        <Frame x:Name="TestFrame" Height="725"/>
+
+
+    </StackPanel>
+
+</Window>
