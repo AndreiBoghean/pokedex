@@ -5,51 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pokedex"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="500" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" >
+        Title="MainWindow" Height="750" MinWidth="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" >
 
-    <Window.Resources>
-        <Style TargetType="TextBox" x:Key="test">
-            <Setter Property="Foreground" Value="Lime"/>
-            <Style.Triggers>
-                <Trigger Property="Text" Value="qwe">
-                    <Setter Property="Background" Value="HotPink"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-    
-    
     <StackPanel>
+        <Grid>
+            <Menu>
+                <MenuItem x:Name="New" Header="New" Background="Green" Width="40" Height="20">
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="Pokemon_Name" Text="Pokemon Name"
+                                         Foreground="Gray" Width="90"
+                                         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
+                                         />
+                                <Button Content="go" Width="25" Click="PokemonName_Go_Button_Click"/>
+                            </StackPanel>
+                        </MenuItem.Header>
 
-        <Menu Height="25">
-
-            <MenuItem x:Name="New" Header="New" Background="Green" Width="40" Height="25">
-
-                <MenuItem x:Name="test" >
-
-                    <MenuItem.Header>
-
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="Pokemon_Name" Text="Pokemon Name" Foreground="Gray" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Width="90" />
-                            <Button Content="go" Width="25" Margin="10, 0, 0, 0" Click="PokemonName_Go_Button_Click"/>
-                        </StackPanel>
-
-                    </MenuItem.Header>
-
-                    <MenuItem.Icon>
-                        <Image Source="Assets\Shiny.png"/>
-                    </MenuItem.Icon>
+                        <MenuItem.Icon>
+                            <Image Source="Assets\Shiny.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
+            </Menu>
 
-            </MenuItem>
-
-            <MenuItem x:Name="Minimise" Header="minimise" Background="Orange" Margin="360, 0, 0, 0" Width="60" Height="25" Click="Minimise_Click"/>
-            <MenuItem x:Name="Close" Header="close"       Background="Red"    Margin="0, 0, 0, 0" Width="40" Height="25" Click="Close_Click"/>
-        </Menu>
+            <Menu HorizontalAlignment="Right">
+                <MenuItem HorizontalAlignment="Right" x:Name="Minimise" Header="minimise" Background="Orange" Width="60" Height="20" Click="Minimise_Click"/>
+                <MenuItem HorizontalAlignment="Right" x:Name="Close"    Header="close"    Background="Red"    Width="40" Height="20" Click="Close_Click"/>
+            </Menu>
+        </Grid>
 
         <Frame x:Name="MainContentFrame" MinHeight="725"/>
-
-
     </StackPanel>
 
 </Window>

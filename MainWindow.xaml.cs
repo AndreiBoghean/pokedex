@@ -27,7 +27,7 @@ namespace pokedex
     {
         HttpClient client = new HttpClient();
         public MainWindow()
-        { InitializeComponent(); MainContentFrame.Content = new PokemonPage(); this.WindowStartupLocation = WindowStartupLocation.CenterScreen; }
+        { InitializeComponent(); MainContentFrame.Content = new PokemonPage(); }
 
         #region close / minimise
         private void Close_Click(object sender, RoutedEventArgs e) => Close();
@@ -35,20 +35,7 @@ namespace pokedex
         private void Minimise_Click(object sender, RoutedEventArgs e)
         { this.WindowState = WindowState.Minimized; }
         #endregion
-
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            ((TextBox)sender).Foreground = new SolidColorBrush(Colors.Black);
-            ((TextBox)sender).Text = null;
-        }
-
-        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if ( ((TextBox)sender).Text != "" ) return;
-            ((TextBox)sender).Foreground = new SolidColorBrush(Colors.Gray);
-            ((TextBox)sender).Text = ((TextBox)sender).Name.Replace("_", " ");
-        }
-
+        
         private void PokemonName_Go_Button_Click(object sender, RoutedEventArgs e)
         {
             Pokemon poke = GetPokemon(Pokemon_Name.Text);
@@ -70,6 +57,18 @@ namespace pokedex
             {
                 return null;
             }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (((TextBox)sender).Text != "") return;
+            ((TextBox)sender).Foreground = new SolidColorBrush(Colors.Gray);
+            ((TextBox)sender).Text = ((TextBox)sender).Name.Replace("_", " ");
         }
     }
 }
