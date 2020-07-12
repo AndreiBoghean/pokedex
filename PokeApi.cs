@@ -7,12 +7,18 @@ using System.Net.Http;
 using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace pokedex
 {
     class PokeApi
     {
         private static HttpClient client = new HttpClient();
+
+        public static BitmapImage GetImage(string url)
+        {
+            return new BitmapImage(new Uri(url));
+        }
 
         private static async Task<dynamic> GetFromApi(string apistring = "")
         {

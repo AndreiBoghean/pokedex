@@ -19,14 +19,18 @@ using ImageWpf = System.Windows.Controls.Image;
 
 namespace pokedex.Pages
 {
-    /// <summary>
-    /// Interaction logic for PokemonPage.xaml
-    /// </summary>
     public partial class PokemonPage : Page
     {
-        public PokemonPage(Frame MainContentFrame, dynamic PokemonClass)
+        Frame MainContentFrame;
+        public PokemonPage(Frame MainContentFrame, Task<dynamic> PokemonClass)
         {
+            this.MainContentFrame = MainContentFrame;
             InitializeComponent();
+
+            MaleFront_Image.Source   = PokeApi.GetImage(PokemonClass.Result.front_default);
+            MaleBack_Image.Source    = PokeApi.GetImage(PokemonClass.Result.back_default);
+            FemaleFront_Image.Source = PokeApi.GetImage(PokemonClass.Result.front_female);
+            FemaleBack_Image.Source  = PokeApi.GetImage(PokemonClass.Result.back_female);
         }
     }
 }
