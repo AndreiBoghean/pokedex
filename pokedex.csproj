@@ -73,7 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="ApiMethods.cs" />
+    <Compile Include="PokeApi.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -81,7 +81,6 @@
     <Compile Include="Pages\PokemonPage.xaml.cs">
       <DependentUpon>PokemonPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pokemon.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

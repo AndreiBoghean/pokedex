@@ -15,7 +15,10 @@ namespace pokedex
     public partial class MainWindow : Window
     {
         public MainWindow()
-        { InitializeComponent(); MainContentFrame.Content = new PokemonPage(); }
+        {
+            InitializeComponent();
+            MainContentFrame.Content = new PokemonPage(MainContentFrame, PokeApi.pokemon.get("pikachu") );
+        }
 
         #region close / minimise
         private void Close_Click(object sender, RoutedEventArgs e) => Close();
@@ -26,7 +29,7 @@ namespace pokedex
         
         private void PokemonName_Go_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainContentFrame.Content = new PokemonPage(MainContentFrame, PokeApi.pokemon.get(Pokemon_Name.Text) );
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)

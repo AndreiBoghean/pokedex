@@ -6,21 +6,29 @@
       mc:Ignorable="d" 
       Title="PokemonPage" Width="500" Height="725">
 
+    <Page.Resources>
+        <Style TargetType="Image" x:Key="PokemonSide">
+            <Setter Property="Stretch" Value="Uniform"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="250"/>
+            <Setter Property="Margin" Value="-65, -65, 0, 0"/>
+            <Setter Property="Source" Value="C:\Users\Andrei\Documents\VS programs\C#\pokedex\Assets\PlaceholderDitto.png"/>
+        </Style>
+    </Page.Resources>
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
 
-        <!--pokemon images-->
+
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -32,16 +40,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="0" Grid.Row="0" Width="250" Height="250" Margin="-65,-65,0,0"/>
-            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="1" Grid.Row="0" Width="250" Height="250" Margin="-65,-65,0,0"/>
-            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="250" Height="250" Margin="-65,-65,0,0"/>
-            <Image Source="C:\Users\Andrei\Documents\google drive\visual studio programs\pokedex\Assets\PlaceholderDitto.png" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Width="250" Height="250" Margin="-65,-65,0,0"/>
-
+            <Image Name="MaleFront_Image"    Style="{StaticResource PokemonSide}" Grid.Column="0" Grid.Row="0"/>
+            <Image Name="MaleBack_Image"     Style="{StaticResource PokemonSide}" Grid.Column="0" Grid.Row="1"/>
+            <Image Name="FemaleFront_Image"  Style="{StaticResource PokemonSide}" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="FemaleBack_Image" Style="{StaticResource PokemonSide}" Grid.Column="1" Grid.Row="1"/>
         </Grid>
         <CheckBox FontSize="25" Content="Show Shiny Variant?" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
-        
-        
-        
-        
+
     </Grid>
 </Page>
