@@ -17,7 +17,7 @@ namespace pokedex
         public MainWindow()
         {
             InitializeComponent();
-            MainContentFrame.Content = new PokemonPage(MainContentFrame, PokeApi.pokemon.get("pikachu") );
+            //MainContentFrame.Content = new PokemonPage(MainContentFrame, PokeApi.pokemon.get("pikachu"));
         }
 
         #region close / minimise

@@ -27,10 +27,10 @@ namespace pokedex.Pages
             this.MainContentFrame = MainContentFrame;
             InitializeComponent();
 
-            MaleFront_Image.Source   = PokeApi.GetImage(PokemonClass.Result.front_default);
-            MaleBack_Image.Source    = PokeApi.GetImage(PokemonClass.Result.back_default);
-            FemaleFront_Image.Source = PokeApi.GetImage(PokemonClass.Result.front_female);
-            FemaleBack_Image.Source  = PokeApi.GetImage(PokemonClass.Result.back_female);
+            MaleFront_Image.Source   = PokeApi.GetImage((string)PokemonClass.Result.front_default);
+            MaleBack_Image.Source    = PokeApi.GetImage((string)PokemonClass.Result.back_default);
+            FemaleFront_Image.Source = PokeApi.GetImage((string)PokemonClass.Result.front_female);
+            FemaleBack_Image.Source  = PokeApi.GetImage((string)PokemonClass.Result.back_female);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace pokedex
 
         private static async Task<dynamic> GetFromApi(string apistring = "")
         {
+            apistring = apistring.Replace(" ", "");
             return JsonConvert.DeserializeObject(await client.GetStringAsync("https://pokeapi.co/api/v2/" + apistring));
         }
 
