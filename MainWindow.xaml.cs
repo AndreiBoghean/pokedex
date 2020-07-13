@@ -29,6 +29,8 @@ namespace pokedex
         
         private void PokemonName_Go_Button_Click(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine();
+            Console.WriteLine("");
             MainContentFrame.Content = new PokemonPage(MainContentFrame, PokeApi.pokemon.get(Pokemon_Name.Text) );
         }
 

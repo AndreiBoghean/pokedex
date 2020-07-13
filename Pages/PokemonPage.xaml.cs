@@ -22,15 +22,18 @@ namespace pokedex.Pages
     public partial class PokemonPage : Page
     {
         Frame MainContentFrame;
-        public PokemonPage(Frame MainContentFrame, Task<dynamic> PokemonClass)
+        public PokemonPage(Frame MainContentFrame, Task<dynamic> PokeClass)
         {
+            dynamic PokemonClass = PokeClass.Result;
             this.MainContentFrame = MainContentFrame;
             InitializeComponent();
 
-            MaleFront_Image.Source   = PokeApi.GetImage((string)PokemonClass.Result.front_default);
-            MaleBack_Image.Source    = PokeApi.GetImage((string)PokemonClass.Result.back_default);
-            FemaleFront_Image.Source = PokeApi.GetImage((string)PokemonClass.Result.front_female);
-            FemaleBack_Image.Source  = PokeApi.GetImage((string)PokemonClass.Result.back_female);
+            Console.WriteLine((string)PokemonClass.sprites.front_default);
+
+            MaleFront_Image.Source   = PokeApi.GetImage((string)PokemonClass.sprites.front_default);
+            MaleBack_Image.Source    = PokeApi.GetImage((string)PokemonClass.sprites.back_default);
+            FemaleFront_Image.Source = PokeApi.GetImage((string)PokemonClass.sprites.front_female);
+            FemaleBack_Image.Source  = PokeApi.GetImage((string)PokemonClass.sprites.back_female);
         }
     }
 }
